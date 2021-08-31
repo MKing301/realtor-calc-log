@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -31,6 +33,9 @@
       crossorigin="anonymous"
     ></script>
 
+    <!-- CSS Stylesheet -->
+    <link rel="stylesheet" href="{% static 'commission/css/styles.css' %}">
+
 
   <title>
     {% block title %} Base {% endblock %}
@@ -40,8 +45,8 @@
   <body>
 
     <!-- Page Content -->
-    <div class="container">
-      <br />
+    <div class="container-fluid">
+      {% include 'commission/includes/_navbar.html' %}
       {% block content%}
       {% endblock %}
     </div>
