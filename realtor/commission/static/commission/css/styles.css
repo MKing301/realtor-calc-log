@@ -1,0 +1,28 @@
+body {
+    min-width: 100%;
+    min-height: 100%;
+}
+
+.page-heading {
+    position: relative;
+    margin-top: 100px;
+  }
+
+.page-content {
+    position: relative;
+    margin-bottom: 60px;
+}
+
+.background-home {
+    min-width: 100%;
+    min-height: 100%;
+    background-image: url('../images/build-a-house-4503738_1920.jpg');
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    margin: -15px -15px;
+    position: absolute;
+    text-align: center;
+    color: white;
+}
