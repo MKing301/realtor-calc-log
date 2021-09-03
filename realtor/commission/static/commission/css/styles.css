@@ -1,28 +1,36 @@
 body {
-    min-width: 100%;
-    min-height: 100%;
+    margin: 0;
 }
 
 .page-heading {
-    position: relative;
+    color: white;
+    text-align: center;
     margin-top: 100px;
   }
 
 .page-content {
-    position: relative;
+    color: white;
+    text-align: center;
     margin-bottom: 60px;
 }
 
 .background-home {
+    background-image: url('../images/build-a-house-4503738_640.jpg');
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    /* Preserve aspect ratio */
     min-width: 100%;
     min-height: 100%;
-    background-image: url('../images/build-a-house-4503738_1920.jpg');
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    margin: -15px -15px;
-    position: absolute;
-    text-align: center;
-    color: white;
 }
+
+#calc-heading {
+    text-align: center;
+    margin-top: 100px;
+  }
+
+#realtorForm {
+    display: grid;
+    justify-content: center;
+  }
