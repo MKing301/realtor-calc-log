@@ -1,143 +1,176 @@
 {% extends 'commission/base.html' %}
 {% block title %}Calculator{% endblock %}
 {% block content %}
-    <main role="main">
-        <header class="page-heading">
-            <div id="calculator-header">
-                <h1>Commission Calculator</h1>
-            </div>
-        </header>
-        <section class="page-content-calculator">
-            <div class="myform">
-                <form id="realtorForm">
-                    <div class="form-group form-group-sm">
-                        <label for="sellPrice">Sell Price:</label>
-                        <div class="input-group input-group-sm">
-                            <div class="input-group-prepend input-group-sm">
-                                <span class="input-group-text input-group-sm">$</span>
-                                <input type="number" id="sellPrice" min="0">
-                                <div class="input-group-append input-group-sm">
-                                    <span class="input-group-text input-group-sm">.00</span>
+    <div id="background-calc">
+        <main role="main">
+            <header id="calc-heading">
+                <div id="calculator-header">
+                    <h1>Commission Calculator</h1>
+                </div>
+            </header>
+            <section id="calc-content">
+                <div class="myform">
+                    <form id="realtorForm">
+                        <div class="form-group form-group-sm">
+                            <label for="sellPrice">Sell Price:</label>
+                            <div class="input-group input-group-sm">
+                                <div class="input-group-prepend input-group-sm">
+                                    <span class="input-group-text input-group-sm">$</span>
+                                    <input type="number" id="sellPrice" min="0">
+                                    <div class="input-group-append input-group-sm">
+                                        <span class="input-group-text input-group-sm">.00</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="form-group form-group-sm">
-                        <label for="commissionPercentage">Commission %:</label>
-                        <div class="input-group-prepend input-group-sm">
-                            <input
-                                type="number"
-                                id="commissionPercentage"
-                                step="0.1"
-                                min="0"
-                                max="100"
-                                value="3.7"
-                            >
-                            <div class="input-group-append input-group-sm">
-                                <span class="input-group-text input-group-sm">%</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group form-group-sm">
-                        <label for="commission">Commission:</label>
-                        <div class="input-group input-group-sm">
-                            <div class="input-group-prepend input-group-sm">
-                                <span class="input-group-text input-group-sm">$</span>
-                                <input
-                                    type="number"
-                                    class="readonly"
-                                    id="commission"
-                                    readonly="true"
-                                    style="background:rgb(240, 240, 240);"
-                                >
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group form-group-sm">
-                        <label for="franchiseFeePercentage">Franchise Fee %:</label>
-                        <div class="input-group input-group-sm">
+                        <div class="form-group form-group-sm">
+                            <label for="commissionPercentage">Commission %:</label>
                             <div class="input-group-prepend input-group-sm">
                                 <input
                                     type="number"
-                                    id="franchiseFeePercentage"
+                                    id="commissionPercentage"
                                     step="0.1"
                                     min="0"
                                     max="100"
-                                    value="6.0"
+                                    value="3.7"
                                 >
                                 <div class="input-group-append input-group-sm">
                                     <span class="input-group-text input-group-sm">%</span>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="form-group form-group-sm">
-                        <label for="fees">Fees:</label>
-                        <div class="input-group input-group-sm">
-                            <div class="input-group-prepend input-group-sm">
-                                <span class="input-group-text input-group-sm">$</span>
-                                <input
-                                    type="number"
-                                    class="readonly"
-                                    id="fees"
-                                    readonly="true"
-                                    style="background:rgb(240, 240, 240);"
-                                >
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group form-group-sm">
-                        <label for="commissionSplitPercentage">Commission Split %:</label>
-                        <div class="input-group input-group-sm">
-                            <div class="input-group-prepend input-group-sm">
-                            <input
-                                type="number"
-                                id="commissionSplitPercentage"
-                                step="0.1"
-                                min="0"
-                                max="100"
-                                value="65.0"
-                            >
-                                <div class="input-group-append input-group-sm">
-                                    <span class="input-group-text input-group-sm">%</span>
+                        <div class="form-group form-group-sm">
+                            <label for="commission">Commission:</label>
+                            <div class="input-group input-group-sm">
+                                <div class="input-group-prepend input-group-sm">
+                                    <span class="input-group-text input-group-sm">$</span>
+                                    <input
+                                        type="number"
+                                        class="readonly"
+                                        id="commission"
+                                        readonly="true"
+                                        style="background:rgb(240, 240, 240);"
+                                    >
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="form-group form-group-sm">
-                        <label for="agentCommission">Agent Commission:</label>
-                        <div class="input-group input-group-sm">
-                            <div class="input-group-prepend input-group-sm">
-                                <span class="input-group-text input-group-sm">$</span>
-                                <input
-                                    type="number"
-                                    class="readonly"
-                                    id="agentCommission"
-                                    readonly="true"
-                                >
+                        <div class="form-group form-group-sm">
+                            <label for="franchiseFeePercentage">Franchise Fee %:</label>
+                            <div class="input-group input-group-sm">
+                                <div class="input-group-prepend input-group-sm">
+                                    <input
+                                        type="number"
+                                        id="franchiseFeePercentage"
+                                        step="0.1"
+                                        min="0"
+                                        max="100"
+                                        value="6.0"
+                                    >
+                                    <div class="input-group-append input-group-sm">
+                                        <span class="input-group-text input-group-sm">%</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="form-group form-group-sm">
-                        <div class="col">
-                            <button
-                                type="button"
-                                class="btn btn-outline-success btn-sm"
-                                v-on:click="getCommission"
-                            >
-                                Get Commission
-                            </button>
-                            <button
-                                type="button"
-                                class="btn btn-outline-secondary btn-sm"
-                                v-on:click="resetForm"
-                            >
-                                Reset
-                            </button>
+                        <div class="form-group form-group-sm">
+                            <label for="fees">Fees:</label>
+                            <div class="input-group input-group-sm">
+                                <div class="input-group-prepend input-group-sm">
+                                    <span class="input-group-text input-group-sm">$</span>
+                                    <input
+                                        type="number"
+                                        class="readonly"
+                                        id="fees"
+                                        readonly="true"
+                                        style="background:rgb(240, 240, 240);"
+                                    >
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </form>
-            </div>
-        </section>
-    </main>
+                        <div class="form-group form-group-sm">
+                            <label for="commissionSplitPercentage">Commission Split %:</label>
+                            <div class="input-group input-group-sm">
+                                <div class="input-group-prepend input-group-sm">
+                                <input
+                                    type="number"
+                                    id="commissionSplitPercentage"
+                                    step="0.1"
+                                    min="0"
+                                    max="100"
+                                    value="65.0"
+                                >
+                                    <div class="input-group-append input-group-sm">
+                                        <span class="input-group-text input-group-sm">%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group form-group-sm">
+                            <label for="agentCommission">Agent Commission:</label>
+                            <div class="input-group input-group-sm">
+                                <div class="input-group-prepend input-group-sm">
+                                    <span class="input-group-text input-group-sm">$</span>
+                                    <input
+                                        type="number"
+                                        class="readonly"
+                                        id="agentCommission"
+                                        readonly="true"
+                                        style="background:rgb(240, 240, 240);"
+                                    >
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group form-group-sm">
+                            <div class="col">
+                                <button
+                                    onclick="getCommission()"
+                                    id="calculate-btn"
+                                    type="button"
+                                    class="btn btn-outline-success btn-sm"
+                                >
+                                    Get Commission
+                                </button>
+                                <button
+                                    onclick="resetForm()"
+                                    id="reset-btn"
+                                    type="button"
+                                    class="btn btn-outline-secondary btn-sm"
+                                >
+                                    Reset
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script>
+        function getCommission(){
+                this.sellPrice = parseFloat(document.getElementById("sellPrice").value);
+                this.commissionPercentage = parseFloat(document.getElementById("commissionPercentage").value);
+                this.franchiseFeePercentage = parseFloat(document.getElementById("franchiseFeePercentage").value);
+                this.commissionSplitPercentage = parseFloat(document.getElementById("commissionSplitPercentage").value);
+
+                this.commission = (this.sellPrice * (this.commissionPercentage/100.00)).toFixed(2);
+                document.getElementById("commission").value = this.commission;
+
+                this.fees = (this.commission - (this.commission * this.franchiseFeePercentage/100.00)).toFixed(2);
+                document.getElementById("fees").value = this.fees;
+
+                this.agentCommission = (this.fees * this.commissionSplitPercentage/100.00).toFixed(2);
+                document.getElementById("agentCommission").value = this.agentCommission;
+        };
+
+        function resetForm(){
+            document.getElementById("sellPrice").value = '';
+            document.getElementById("commissionPercentage").value = 3.7;
+            document.getElementById("commission").value = '';
+            document.getElementById("franchiseFeePercentage").value = 6;
+            document.getElementById("fees").value = '';
+            document.getElementById("commissionSplitPercentage").value = 65;
+            document.getElementById("agentCommission").value = '';
+        };
+
+    </script>
 {% endblock %}
